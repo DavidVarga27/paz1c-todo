@@ -8,7 +8,7 @@ public class Uloha {
     
     private String nazov;
     
-    private Date date;
+    private Date datum;
     
     private SimpleDateFormat dateFormat = new SimpleDateFormat("d.M.yyyy");    
 
@@ -28,17 +28,17 @@ public class Uloha {
         this.nazov = nazov;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getDatum() {
+        return datum;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDatum(Date datum) {
+        this.datum = datum;
     }
 
     @Override
     public String toString() {
-        return this.nazov + " (termín " + dateFormat.format(this.date) + ")";
+        return this.nazov + " (termín " + dateFormat.format(this.datum) + ")";
     }
     
     

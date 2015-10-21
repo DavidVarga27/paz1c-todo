@@ -13,12 +13,12 @@ public class PamatovyUlohaDao implements UlohaDao {
         Uloha uloha1 = new Uloha();
         uloha1.setId(1L);
         uloha1.setNazov("Vytvoriť team pre projekt");
-        uloha1.setDate(new Date(2015 - 1900, Calendar.OCTOBER, 10));
+        uloha1.setDatum(new Date(2015 - 1900, Calendar.OCTOBER, 10));
         ulohy.add(uloha1);
         Uloha uloha2 = new Uloha();
         uloha2.setId(2L);
         uloha2.setNazov("Písať test");
-        uloha2.setDate(new Date(2015 - 1900, Calendar.DECEMBER, 16));
+        uloha2.setDatum(new Date(2015 - 1900, Calendar.DECEMBER, 16));
         ulohy.add(uloha2);
     }
 
