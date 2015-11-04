@@ -2,26 +2,25 @@ package sk.upjs.ics.todo;
 
 import java.awt.Color;
 import java.awt.Component;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
-public class UlohaListCellRenderer implements ListCellRenderer<Uloha> {
-    
+public class UlohaListCellRenderer extends DefaultListCellRenderer {
+
     @Override
-    public Component getListCellRendererComponent(JList<? extends Uloha> jlist, Uloha uloha, int i, boolean bln, boolean bln1) {
-        JLabel ulohaLabel = new JLabel(uloha.getNazov());
-       
-        if (jeSplnena(uloha)) {
-            ulohaLabel.setOpaque(true);
-            ulohaLabel.setBackground(Color.green);
-            
+    public Component getListCellRendererComponent(JList<?> jlist, Object o, int i, boolean isSelected, boolean cellHasFocus) {
+        Component component = super.getListCellRendererComponent(jlist, o, i, isSelected, cellHasFocus);
+        Uloha uloha = (Uloha) o;
+        if (jeSplnena(uloha) && !isSelected) {
+            component.setBackground(Color.green);
         }
-        return ulohaLabel;
+        return component;
     }
-    
+
     private boolean jeSplnena(Uloha uloha) {
         return true;
     }
-    
+
 }
