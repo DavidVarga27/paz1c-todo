@@ -6,4 +6,5 @@ public interface UlohaDao {
     public void pridat(Uloha uloha);
     public void odstranit(Uloha uloha);
     public List<Uloha> dajVsetky();
+    public void upravit(Uloha uloha);
 }

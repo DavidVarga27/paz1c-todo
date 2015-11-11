@@ -38,4 +38,15 @@ public class MySqlUlohaDao implements UlohaDao {
        jdbcTemplate.update(sql, uloha.getId());
     }
 
+    @Override
+    public void upravit(Uloha uloha) {
+  String sql = "UPDATE `todo`.`uloha`\n" +
+"SET\n" +
+"`nazov` = ?,\n" +
+"`datum` = ?,\n" +
+"`splnena` = ?\n" +
+"WHERE `id` = ?;";
+  jdbcTemplate.update(sql,uloha.getNazov(),uloha.getDatum(),uloha.isSplnena(),uloha.getId());
+    }
+
 }
